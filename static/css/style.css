@@ -62,11 +62,11 @@ body {
     background-color: var(--success-color);
 }
 
-.btn-primary {
+.bttn-primary {
     background-color: var(--primary-color);
 }
 
-.btn-primary:hover {
+.bttn-primary:hover {
     background-color: var(--secondary-color);
 }
 

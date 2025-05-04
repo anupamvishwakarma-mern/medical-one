@@ -1,0 +1,371 @@
+{% load static %} {% include 'base.html' %} {% block css %}
+<style>
+  .entry-form {
+    padding: 40px;
+  }
+  .entry-form .bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+  }
+
+  .entry-form .bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .patient-form {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0px auto;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1b71a1;
+    border-bottom: 2px solid #1b71a1;
+    padding-bottom: 10px;
+  }
+
+  .form-section {
+    margin-bottom: 25px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #1b71a1;
+  }
+
+  .form-section h3 {
+    color: #1b71a1;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .medicine-entry {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    background-color: #83f3bf8d;
+  }
+
+  .medicine-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-add {
+    background-color: transparent;
+    border: 1px solid #198754;
+    color: #198754;
+  }
+
+  .btn-add:hover {
+    background-color: #198754;
+    color: #f0f7ff;
+  }
+
+  .btn-remove {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .upload-area {
+    border: 2px dashed #1b71a1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .upload-area:hover {
+    background-color: #f0f7ff;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #1b71a1;
+    border: none;
+  }
+</style>
+{% endblock %} {% block content %}
+<section class="entry-form">
+  <div class="bg-img">
+    <img src="{% static 'images/bg-entry1.jpg' %}" alt="bg image" />
+  </div>
+  <div class="container">
+    <form class="patient-form" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="form-header">
+        <h2 class="fw-bold">Patient Record & Prescription</h2>
+      </div>
+
+      <!-- Patient Basic Information -->
+      <div class="form-section">
+        <h3>Patient Details</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="patient_name"
+              required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Age</label>
+            <input type="text" class="form-control" name="age" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" name="gender" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phone" required />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea class="form-control" name="address" rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Medical History -->
+      <div class="form-section">
+        <h3>Medical History</h3>
+        <div class="mb-3">
+          <label class="form-label">Known Allergies</label>
+          <input
+            type="text"
+            class="form-control"
+            name="allergies"
+            placeholder="List any allergies"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Current Medications</label>
+          <textarea
+            class="form-control"
+            name="current_meds"
+            rows="2"
+            placeholder="List current medications"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Medical Conditions</label>
+          <textarea
+            class="form-control"
+            name="conditions"
+            rows="3"
+            placeholder="Chronic conditions, past surgeries, etc."
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Visit Details -->
+      <div class="form-section">
+        <h3>Visit Information</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Visit Date</label>
+            <input
+              type="date"
+              class="form-control"
+              name="visit_date"
+              required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Visit Reason</label>
+            <input
+              type="text"
+              class="form-control"
+              name="reason"
+              placeholder="Chief complaint"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Diagnosis</label>
+          <textarea
+            class="form-control"
+            name="diagnosis"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Notes</label>
+          <textarea
+            class="form-control"
+            name="notes"
+            rows="3"
+            placeholder="Examination findings, recommendations"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Prescription -->
+      <div class="form-section">
+        <h3>Prescription</h3>
+        <div id="medicine-container"></div>
+
+        <div class="row mt-3">
+          <div class="col-md-5">
+            <label class="form-label">Medicine Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="med-name"
+              placeholder="e.g., Amoxicillin"
+            />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Dosage</label>
+            <input
+              type="text"
+              class="form-control"
+              id="med-dosage"
+              placeholder="e.g., 500mg"
+            />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Frequency</label>
+            <input
+              type="text"
+              class="form-control"
+              id="med-frequency"
+              placeholder="e.g., 2 times daily"
+            />
+          </div>
+          <div class="col-md-1 d-flex align-items-end">
+            <button type="button" class="btn btn-add" onclick="addMedicine()">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports Upload -->
+      <div class="form-section">
+        <h3>Upload Reports</h3>
+        <div class="mb-3">
+          <label class="form-label">Test Reports</label>
+          <div
+            class="upload-area"
+            onclick="document.getElementById('reports').click()"
+          >
+            <p>Click to upload or drag and drop</p>
+            <small class="text-muted">PDF, JPG, or PNG (Max 5MB each)</small>
+            <input
+              type="file"
+              id="reports"
+              name="reports"
+              multiple
+              accept=".pdf,.jpg,.jpeg,.png"
+              style="display: none"
+            />
+          </div>
+          <div id="file-list" class="mt-2"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary submit-btn mt-4">
+        Save Patient Record
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  function addMedicine() {
+    const name = document.getElementById("med-name").value;
+    const dosage = document.getElementById("med-dosage").value;
+    const frequency = document.getElementById("med-frequency").value;
+
+    if (name && dosage && frequency) {
+      const container = document.getElementById("medicine-container");
+      const medicineId = Date.now();
+
+      const entry = document.createElement("div");
+      entry.className = "medicine-entry";
+      entry.id = `med-${medicineId}`;
+      entry.innerHTML = `
+        <input type="hidden" name="medicines[${medicineId}][name]" value="${name}">
+        <input type="hidden" name="medicines[${medicineId}][dosage]" value="${dosage}">
+        <input type="hidden" name="medicines[${medicineId}][frequency]" value="${frequency}">
+        
+        <div class="flex-grow-1">
+          <strong>${name}</strong> - ${dosage}mg, ${frequency}times
+        </div>
+        <div class="medicine-actions">
+          <button type="button" class="btn btn-sm btn-remove" onclick="removeMedicine('med-${medicineId}')">×</button>
+        </div>
+      `;
+
+      container.appendChild(entry);
+
+      // Clear inputs
+      document.getElementById("med-name").value = "";
+      document.getElementById("med-dosage").value = "";
+      document.getElementById("med-frequency").value = "";
+    }
+  }
+
+  // Remove medicine from prescription
+  function removeMedicine(id) {
+    document.getElementById(id).remove();
+  }
+
+  // Handle file upload display
+  document.getElementById("reports").addEventListener("change", function (e) {
+    const fileList = document.getElementById("file-list");
+    fileList.innerHTML = "";
+
+    if (this.files.length > 0) {
+      const list = document.createElement("ul");
+
+      Array.from(this.files).forEach((file) => {
+        const item = document.createElement("li");
+        item.textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(
+          2
+        )}MB)`;
+        list.appendChild(item);
+      });
+
+      fileList.appendChild(list);
+    }
+  });
+</script>
+{% endblock content %}

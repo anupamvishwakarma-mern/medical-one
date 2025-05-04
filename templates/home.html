@@ -203,6 +203,110 @@
     font-size: 16px;
     margin-top: 15px;
   }
+
+  .why-choose-us {
+    padding: 50px 0;
+    background-color: #1b71a1;
+    color: #ffffff;
+  }
+
+  .why-choose-us .container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .why-choose-us .container .main-head h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .why-choose-us .container .row .about-us-image {
+    width: 500px;
+    height: auto;
+  }
+
+  .why-choose-us .container .row .about-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  .why-choose-us .container .bi.bi-check-circle-fill {
+    width: 18px;
+    height: 18px;
+  }
+
+  .why-choose-us .container .row h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .why-choose-us .container .row p {
+    font-size: 15px;
+  }
+
+  .appointment .main-head h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .form-livedoc-control {
+    border: 1px solid rgba(13, 174, 202, 0.811);
+    border-radius: 5px;
+    color: #000;
+    font-weight: 300;
+    background-color: #fffefe;
+    padding: 0.95rem 0.95rem;
+  }
+  .form-select {
+    border: 1px solid rgba(13, 174, 202, 0.811);
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 0.7rem 0.95rem;
+    background-color: transparent;
+    color: #7b7a8b;
+  }
+  .form-select:focus,
+  .form-livedoc-control:focus {
+    color: #464558;
+    font-weight: 700;
+    background-color: rgba(13, 175, 202, 0.08);
+    border: 2px solid rgba(40, 55, 121, 0.8);
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .appointment .btn {
+    background-color: #1b71a1;
+    padding: 10px 20px;
+    color: #fff;
+  }
+
+  .appointment .btn:hover {
+    background-color: #0d5e8d;
+  }
+
+  .testimonials {
+    background-color: #9de8c79c;
+  }
+
+  .testimonials #carouselPeople {
+    min-height: 250px;
+  }
+  .testimonials .swiper-pagination-bullet{
+    background-color: #38365b;
+    width: 25px;
+    height: 12px;
+    border-radius: 30px;
+  }
+  .testimonials .swiper-pagination-bullet-active{
+    background-color: #1b71a1;
+  }
 </style>
 {% endblock css %} {% block content %}
 
@@ -449,11 +553,270 @@
       </div>
     </div>
   </section>
+
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="main-head">
+        <h2 class="text-center">Why Meet Dr. Dheeru Bhai</h2>
+      </div>
+      <div class="row justify-content-between">
+        <div class="col-lg-6 about-us-content">
+          <div class="d-flex gap-2">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="d-flex flex-column">
+              <h3>One-on-One, Personalized Care</h3>
+              <p>
+                No rushed appointments. I take time to listen, understand your
+                concerns, and create tailored treatment plans that align with
+                your health goals.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="d-flex flex-column">
+              <h3>7 Years of Specialized Experience</h3>
+              <p>
+                I bring 7 years of experience in diagnosing and treating complex
+                conditions, ensuring you receive evidence-based, up-to-date
+                care.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="d-flex flex-column">
+              <h3>Holistic, Patient-Centered Approach</h3>
+              <p>
+                I treat you, not just your symptoms. From preventive care to
+                chronic disease management, every plan focuses on your overall
+                well-being.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="d-flex flex-column">
+              <h3>Transparent & Compassionate Communication</h3>
+              <p>
+                No medical jargon. I explain diagnoses, options, and costs
+                clearly so you can make informed decisions about your health.
+              </p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="d-flex flex-column">
+              <h3>A Welcoming, Private Environment</h3>
+              <p>
+                My clinic is designed for comfort and confidentiality, ensuring
+                you feel at ease during every visit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 about-us-image">
+          <img
+            src="{% static 'images/doctor1.jpg' %}"
+            alt="About us"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 appointment" id="appointment">
+    <div class="container">
+      <div class="main-head my-5">
+        <h2 class="text-center fw-bold txt-primary">APPOINTMENT</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 z-index-2 mb-5">
+          <img
+            class="w-100 rounded"
+            src="{% static 'images/appointment.jpg' %}"
+            alt="appointment image"
+          />
+        </div>
+        <div class="col-lg-6 z-index-2">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label class="visually-hidden" for="inputName">Name</label
+              ><input
+                class="form-control form-livedoc-control"
+                id="inputName"
+                type="text"
+                placeholder="Name"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="visually-hidden" for="inputPhone">Phone</label
+              ><input
+                class="form-control form-livedoc-control"
+                id="inputPhone"
+                type="number"
+                placeholder="Phone"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label visually-hidden" for="inputCategory"
+                >Category</label
+              ><select class="form-select" id="inputCategory">
+                <option selected="selected">Category</option>
+                <option>Category One</option>
+                <option>Category Two</option>
+                <option>Category Three</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label visually-hidden" for="inputEmail"
+                >Age</label
+              ><input
+                class="form-control form-livedoc-control"
+                id="inputEmail"
+                type="text"
+                placeholder="Age (Years/Months)"
+              />
+            </div>
+            <div class="col-md-12">
+              <label
+                class="form-label visually-hidden"
+                for="validationTextarea"
+              >
+                Problems </label
+              ><textarea
+                class="form-control form-livedoc-control"
+                id="validationTextarea"
+                placeholder="Problems..."
+                style="height: 250px"
+                required="required"
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <div class="d-grid">
+                <button class="btn bttn-primary rounded-pill" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- end of .container-->
+  </section>
+
+  <section class="py-5 testimonials">
+    <div class="container">
+      <div class="main-head pb-5">
+        <h2 class="text-center fw-bold txt-primary">PATIENTS' WORDS</h2>
+      </div>
+      <div class="align-items-center swiper" style="width: 85%;">
+        <div class="pointer-event" id="carouselPeople">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="row h-100">
+                <div class="col-sm-3 text-center">
+                  <img
+                    src="{% static 'images/testimonial1.png' %}"
+                    width="100"
+                    alt=""
+                  />
+                  <h5 class="mt-3 fw-medium txt-primary">Edward Newgate</h5>
+                  <p class="fw-normal mb-0">Founder Circle</p>
+                </div>
+                <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
+                  <h2 class="txt-primary fw-bold">Fantastic Response!</h2>
+                  <p>
+                    This medical and health care facility distinguishes itself
+                    from the competition by providing technologically advanced
+                    medical and health care. A mobile app and a website are
+                    available via which you can easily schedule appointments,
+                    get online consultations, and see physicians, who will
+                    assist you through the whole procedure. And all of the
+                    prescriptions, medications, and other services they offer
+                    are 100% genuine, medically verified, and proved. I believe
+                    that the Livedoc staff is doing an outstanding job. Highly
+                    recommended their health care services.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="row h-100">
+                <div class="col-sm-3 text-center">
+                  <img
+                    src="{% static 'images/testimonial1.png' %}"
+                    width="100"
+                    alt=""
+                  />
+                  <h5 class="mt-3 fw-medium txt-primary">Jhon Doe</h5>
+                  <p class="fw-normal mb-0">UI/UX Designer</p>
+                </div>
+                <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
+                  <h2 class="txt-primary fw-bold">Fantastic Response!</h2>
+                  <div class="my-2">
+                    <p>
+                      This medical and health care facility distinguishes itself
+                      from the competition by providing technologically advanced
+                      medical and health care. A mobile app and a website are
+                      available via which you can easily schedule appointments,
+                      get online consultations, and see physicians, who will
+                      assist you through the whole procedure. And all of the
+                      prescriptions, medications, and other services they offer
+                      are 100% genuine, medically verified, and proved. I
+                      believe that the Livedoc staff is doing an outstanding
+                      job. Highly recommended their health care services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="row h-100">
+                <div class="col-sm-3 text-center">
+                  <img
+                    src="{% static 'images/testimonial1.png' %}"
+                    width="100"
+                    alt=""
+                  />
+                  <h5 class="mt-3 fw-medium txt-primary">Jeny Doe</h5>
+                  <p class="fw-normal mb-0">Web Designer</p>
+                </div>
+                <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
+                  <h2 class="txt-primary fw-bold">Fantastic Response!</h2>
+                  <div class="my-2">
+                    <p>
+                      This medical and health care facility distinguishes itself
+                      from the competition by providing technologically advanced
+                      medical and health care. A mobile app and a website are
+                      available via which you can easily schedule appointments,
+                      get online consultations, and see physicians, who will
+                      assist you through the whole procedure. And all of the
+                      prescriptions, medications, and other services they offer
+                      are 100% genuine, medically verified, and proved. I
+                      believe that the Livedoc staff is doing an outstanding
+                      job. Highly recommended their health care services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
+
+{% include 'components/footer.html' %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Initialize Bootstrap Carousel
     $("#customCarousel1").carousel({
       interval: 3000, // Auto-slide every 3 seconds (optional)
       pause: "hover", // Pause on hover
@@ -474,6 +837,39 @@
       const slideTo = $(this).data("slide-to");
       $("#customCarousel1").carousel(slideTo);
     });
+  });
+</script>
+
+<script>
+  const swiper = new Swiper("#carouselPeople", {
+    direction: "horizontal",
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      dragClass: "swiper-scrollbar-drag",
+      draggable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+      1600: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+    },
   });
 </script>
 
