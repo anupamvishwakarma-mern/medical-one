@@ -1,0 +1,131 @@
+body {
+    font-family: "Montserrat", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1B71A1;
+    --secondary-color: #009688;
+    --green-color: #40E0D0;
+    --gray-color: #F8F9FA;
+    --success-color: #4CAF50;
+    --danger-color: #FF6B6B;
+}
+
+.txt-primary {
+    color: var(--primary-color);
+}
+
+.txt-secondary {
+    color: var(--secondary-color);
+}
+
+.txt-gray {
+    color: var(--gray-color);
+}
+
+.txt-green {
+    color: var(--green-color);
+}
+
+.txt-danger {
+    color: var(--danger-color);
+}
+
+.txt-success {
+    color: var(--success-color);
+}
+
+.bgg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bgg-secondary {
+    background-color: var(--secondary-color);
+}
+
+.bgg-gray {
+    background-color: var(--gray-color);
+}
+
+.bgg-green {
+    background-color: var(--green-color);
+}
+
+.bgg-danger {
+    background-color: var(--danger-color);
+}
+
+.bgg-success {
+    background-color: var(--success-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: var(--green-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-green {
+    background-color: var(--green-color);
+}
+
+.btn-green:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-gray {
+    background-color: var(--gray-color);
+}
+
+.btn-gray:hover {
+    background-color: var(--secondary-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(45, 146, 205, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(45, 146, 205, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(45, 146, 205, 0.25);
+}

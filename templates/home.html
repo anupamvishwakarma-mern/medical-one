@@ -1,0 +1,480 @@
+{% load static %} {% include 'base.html' %} {% block css %}
+<style>
+  .home .hero_bg_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .home .hero_bg_box img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: bottom right;
+    object-position: bottom right;
+  }
+  .home .slider_section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 90px 0;
+  }
+  .home .slider_section .row {
+    align-items: center;
+  }
+
+  .home #customCarousel1 {
+    width: 100%;
+    position: unset;
+  }
+
+  .home .detail-box {
+    color: #fefefe;
+  }
+  .home .slider_section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .home .slider_section p {
+    color: #fefefe;
+    font-size: 14px;
+  }
+
+  .home .slider_section .btn-box {
+    display: flex;
+    margin: 0 -5px;
+    margin-top: 25px;
+  }
+  .home .slider_section a {
+    margin: 5px;
+    text-align: center;
+    width: 165px;
+  }
+
+  .home .img-box {
+    display: flex;
+    justify-content: center;
+  }
+  .home .img-box img {
+    width: 100%;
+    max-width: 375px;
+  }
+
+  .home .carousel-indicators {
+    position: unset;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+  }
+  .home .carousel-indicators li {
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    opacity: 1;
+  }
+  .home .carousel-indicators li.active {
+    width: 20px;
+    height: 20px;
+  }
+
+  .home .slider_section .detail-box .btn-box .btn1 {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #62d2a2;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid #ffffff;
+  }
+
+  #departments {
+    margin-top: 180px;
+  }
+
+  .icon-box a {
+    color: #afaebc;
+    font-size: 18px;
+  }
+  .icon-box:hover .deparment-icon {
+    display: block;
+  }
+  .icon-box .deparment-icon-hover {
+    display: none;
+  }
+
+  .icon-box:hover .deparment-icon {
+    display: none;
+  }
+  .icon-box:hover .deparment-icon-hover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .icon-box:hover p {
+    color: #1b71a1;
+  }
+
+  .about-us {
+    margin: 50px 0;
+  }
+
+  .about-us .main-head {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-us .main-head h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #1b71a1;
+    text-align: center;
+  }
+
+  .about-us .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-us .about-us-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    padding: 0;
+  }
+
+  .about-us .about-us-image img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .about-us .about-us-content {
+    text-align: left;
+    padding: 0 50px;
+  }
+
+  .about-us .about-us-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #1b71a1;
+    margin: 0;
+  }
+
+  .about-us .about-us-content span {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .about-us .about-us-content p {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+</style>
+{% endblock css %} {% block content %}
+
+<section class="home_section layout_padding">
+  <div class="home">
+    <div class="container">
+      <div class="hero_bg_box">
+        <img src="{% static 'images/hero-bg.png' %}" alt="hero bg image" />
+      </div>
+      <section class="slider_section">
+        <div
+          id="customCarousel1"
+          class="carousel slide pointer-event"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="detail-box">
+                      <h1>We Provide Best Healthcare</h1>
+                      <p>
+                        Explicabo esse amet tempora quibusdam laudantium,
+                        laborum eaque magnam fugiat hic? Esse dicta aliquid
+                        error repudiandae earum suscipit fugiat molestias,
+                        veniam, vel architecto veritatis delectus repellat modi
+                        impedit sequi.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="detail-box">
+                      <h1>We Provide Best Healthcare</h1>
+                      <p>
+                        Explicabo esse amet tempora quibusdam laudantium,
+                        laborum eaque magnam fugiat hic? Esse dicta aliquid
+                        error repudiandae earum suscipit fugiat molestias,
+                        veniam, vel architecto veritatis delectus repellat modi
+                        impedit sequi.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="detail-box">
+                      <h1>We Provide Best Healthcare</h1>
+                      <p>
+                        Explicabo esse amet tempora quibusdam laudantium,
+                        laborum eaque magnam fugiat hic? Esse dicta aliquid
+                        error repudiandae earum suscipit fugiat molestias,
+                        veniam, vel architecto veritatis delectus repellat modi
+                        impedit sequi.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn btn-outline-success btn1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class=""></li>
+            <li data-target="#customCarousel1" data-slide-to="1" class=""></li>
+            <li
+              data-target="#customCarousel1"
+              data-slide-to="2"
+              class="active"
+            ></li>
+          </ol>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="" id="departments">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 py-3">
+          <h1 class="text-center txt-primary fw-bold">OUR DEPARTMENTS</h1>
+        </div>
+      </div>
+      <div
+        class="row py-5 align-items-center justify-content-center justify-content-lg-evenly"
+      >
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/neurology.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/neurology.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">Neurology</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/eye-care.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/eye-care.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">Eye care</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/cardiac.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/cardiac.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">Cardiac care</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/heart.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/heart.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">Heart care</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/osteoporosis.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/osteoporosis.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">Osteoporosis</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+          <div class="d-flex flex-column align-items-center">
+            <div class="icon-box text-center">
+              <a class="text-decoration-none" href="#!"
+                ><img
+                  class="mb-3 deparment-icon"
+                  src="{% static 'images/ear.png' %}"
+                  alt="..."
+                /><img
+                  class="mb-3 deparment-icon-hover"
+                  src="{% static 'images/ear.svg' %}"
+                  alt="..."
+                />
+                <p class="text-center">ENT</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us">
+    <div class="container">
+      <div class="main-head">
+        <h2 class="text-center">About us</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 about-us-image">
+          <img
+            src="{% static 'images/doctor.jpg' %}"
+            alt="About us"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-lg-6 about-us-content">
+          <h3>Dr. Dheeru Bhai</h3>
+          <span class="text-muted">
+            Neurology Specialist | Osteoporosis Specialist | ENT
+          </span>
+          <p class="text-start">
+            We think that everyone should have easy access to excellent
+            healthcare. Our aim is to make the procedure as simple as possible
+            for our patients and to offer treatment no matter where they are —
+            in person or at their convenience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Bootstrap Carousel
+    $("#customCarousel1").carousel({
+      interval: 3000, // Auto-slide every 3 seconds (optional)
+      pause: "hover", // Pause on hover
+      wrap: true, // Loop slides
+    });
+
+    // Update indicators on slide change
+    $("#customCarousel1").on("slid.bs.carousel", function () {
+      const activeIndex = $(".carousel-item.active").index();
+      $(".carousel-indicators li")
+        .removeClass("active")
+        .eq(activeIndex)
+        .addClass("active");
+    });
+
+    // Click handler for indicators (optional, Bootstrap handles this by default)
+    $(".carousel-indicators li").click(function () {
+      const slideTo = $(this).data("slide-to");
+      $("#customCarousel1").carousel(slideTo);
+    });
+  });
+</script>
+
+{% endblock content %}
