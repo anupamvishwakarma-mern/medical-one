@@ -1,4 +1,6 @@
-{% load static %} {% include 'base.html' %} {% block css %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}
 <style>
   .home .hero_bg_box {
     position: absolute;
@@ -308,7 +310,9 @@
     background-color: #1b71a1;
   }
 </style>
-{% endblock css %} {% block content %}
+{% endblock css %} 
+
+{% block content %}
 
 <section class="home_section layout_padding">
   <div class="home">
