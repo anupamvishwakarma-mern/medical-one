@@ -1,3 +1,26 @@
+<style>
+  @media screen and (max-width: 600px) {
+    .header .navbar-brand{
+      font-size: 20px;
+    }
+
+    .header .navbar-toggler{
+      width: fit-content;
+    }
+
+    .header .container{
+      position: absolute;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 5px #9a9a9a;
+    }
+
+    .home .slider_section{
+      padding-top: 145px;
+    }
+  }
+</style>
+
+
 {% include 'components/topnav.html' %}
 <header class="position-sticky top-0 header">
   <div class="container">
@@ -7,8 +30,8 @@
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarsExample04"
+          data-toggle="collapse"
+          data-target="#navbarsExample04"
           aria-controls="navbarsExample04"
           aria-expanded="false"
           aria-label="Toggle navigation"

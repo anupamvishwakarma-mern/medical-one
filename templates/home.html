@@ -1,6 +1,4 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block css %}
+{% extends 'base.html' %} {% load static %} {% block css %}
 <style>
   .home .hero_bg_box {
     position: absolute;
@@ -40,6 +38,10 @@
     align-items: center;
   }
 
+  .home .slider_section .carousel-indicators{
+    margin-top: 60px;
+  }
+
   .home #customCarousel1 {
     width: 100%;
     position: unset;
@@ -49,7 +51,6 @@
     color: #fefefe;
   }
   .home .slider_section h1 {
-    font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -150,7 +151,6 @@
   }
 
   .about-us .main-head h2 {
-    font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -187,7 +187,6 @@
   }
 
   .about-us .about-us-content h3 {
-    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -221,7 +220,6 @@
 
   .why-choose-us .container .main-head h2 {
     color: #ffffff;
-    font-size: 2.5rem;
     font-weight: 600;
   }
 
@@ -251,7 +249,7 @@
     font-size: 15px;
   }
 
-  .appointment .main-head h2 {
+  h2 {
     font-size: 2.5rem;
     font-weight: 600;
   }
@@ -296,23 +294,87 @@
   .testimonials {
     background-color: #9de8c79c;
   }
-
+  .testimonials .swiper{
+    width: 85%;
+  }
   .testimonials #carouselPeople {
     min-height: 250px;
   }
-  .testimonials .swiper-pagination-bullet{
+  .testimonials .swiper-pagination-bullet {
     background-color: #38365b;
     width: 25px;
     height: 12px;
     border-radius: 30px;
   }
-  .testimonials .swiper-pagination-bullet-active{
+  .testimonials .swiper-pagination-bullet-active {
     background-color: #1b71a1;
   }
-</style>
-{% endblock css %} 
 
-{% block content %}
+  a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
+
+    h6 {
+      font-size: 0.8rem;
+    }
+    .home .slider_section h1 {
+      font-size: 2rem;
+      color: #1b71a1;
+    }
+
+    .home .slider_section p {
+      font-size: 1rem;
+      color: #000000;
+    }
+    .home .hero_bg_box img {
+      object-position: center;
+    }
+    #departments {
+      margin-top: 80px;
+    }
+    .about-us .row{
+      row-gap: 20px;
+    }
+    .about-us .about-us-image {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+    }
+    .about-us .about-us-content {
+      text-align: center;
+      padding: 0 30px;
+    }
+    .testimonials .swiper{
+      width: 90%;
+      height: 100%;
+    }
+    .testimonials #carouselPeople{
+      min-height: 700px;
+    }
+  }
+</style>
+{% endblock css %} {% block content %}
 
 <section class="home_section layout_padding">
   <div class="home">
@@ -327,52 +389,52 @@
           data-ride="carousel"
         >
           <div class="carousel-inner">
-            <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>We Provide Best Healthcare</h1>
-                      <p>
-                        Explicabo esse amet tempora quibusdam laudantium,
-                        laborum eaque magnam fugiat hic? Esse dicta aliquid
-                        error repudiandae earum suscipit fugiat molestias,
-                        veniam, vel architecto veritatis delectus repellat modi
-                        impedit sequi.
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn1"> Read More </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>We Provide Best Healthcare</h1>
-                      <p>
-                        Explicabo esse amet tempora quibusdam laudantium,
-                        laborum eaque magnam fugiat hic? Esse dicta aliquid
-                        error repudiandae earum suscipit fugiat molestias,
-                        veniam, vel architecto veritatis delectus repellat modi
-                        impedit sequi.
-                      </p>
-                      <div class="btn-box">
-                        <a href="" class="btn1"> Read More </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="carousel-item active">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-6">
+                    <div class="detail-box">
+                      <h1>We Provide Best Healthcare</h1>
+                      <p>
+                        Explicabo esse amet tempora quibusdam laudantium,
+                        laborum eaque magnam fugiat hic? Esse dicta aliquid
+                        error repudiandae earum suscipit fugiat molestias,
+                        veniam, vel architecto veritatis delectus repellat modi
+                        impedit sequi.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="detail-box">
+                      <h1>We Provide Best Healthcare</h1>
+                      <p>
+                        Explicabo esse amet tempora quibusdam laudantium,
+                        laborum eaque magnam fugiat hic? Esse dicta aliquid
+                        error repudiandae earum suscipit fugiat molestias,
+                        veniam, vel architecto veritatis delectus repellat modi
+                        impedit sequi.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="detail-box">
                       <h1>We Provide Best Healthcare</h1>
                       <p>
@@ -394,12 +456,12 @@
             </div>
           </div>
           <ol class="carousel-indicators">
-            <li data-target="#customCarousel1" data-slide-to="0" class=""></li>
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
             <li data-target="#customCarousel1" data-slide-to="1" class=""></li>
             <li
               data-target="#customCarousel1"
               data-slide-to="2"
-              class="active"
+              class=""
             ></li>
           </ol>
         </div>
@@ -411,13 +473,13 @@
     <div class="container">
       <div class="row">
         <div class="col-12 py-3">
-          <h1 class="text-center txt-primary fw-bold">OUR DEPARTMENTS</h1>
+          <h2 class="text-center txt-primary fw-bold">OUR DEPARTMENTS</h2>
         </div>
       </div>
       <div
         class="row py-5 align-items-center justify-content-center justify-content-lg-evenly"
       >
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -435,7 +497,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -453,7 +515,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -471,7 +533,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -489,7 +551,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -507,7 +569,7 @@
             </div>
           </div>
         </div>
-        <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+        <div class="col-4 col-md-4 col-lg-auto text-xl-start">
           <div class="d-flex flex-column align-items-center">
             <div class="icon-box text-center">
               <a class="text-decoration-none" href="#!"
@@ -547,7 +609,7 @@
           <span class="text-muted">
             Neurology Specialist | Osteoporosis Specialist | ENT
           </span>
-          <p class="text-start">
+          <p class="text-center text-lg-start">
             We think that everyone should have easy access to excellent
             healthcare. Our aim is to make the procedure as simple as possible
             for our patients and to offer treatment no matter where they are —
@@ -716,7 +778,7 @@
       <div class="main-head pb-5">
         <h2 class="text-center fw-bold txt-primary">PATIENTS' WORDS</h2>
       </div>
-      <div class="align-items-center swiper" style="width: 85%;">
+      <div class="align-items-center swiper">
         <div class="pointer-event" id="carouselPeople">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -814,8 +876,6 @@
     </div>
   </section>
 </section>
-
-{% include 'components/footer.html' %}
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

@@ -60,7 +60,7 @@
     gap: 15px;
     margin-bottom: 15px;
     align-items: center;
-    background-color: #83f3bf8d;
+    border-bottom: 1px solid #1b71a1;
   }
 
   .medicine-actions {
@@ -103,6 +103,24 @@
     font-size: 18px;
     background-color: #1b71a1;
     border: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .entry-form{
+      padding: 100px 10px;
+    }
+    .patient-form{
+      padding: 30px 5px;
+    }
+    .entry-form form input{
+      height: 36px;
+    }
+    .entry-form form textarea{
+      height: 100px;
+    }
+    .medicine-entry button{
+      margin: 0;
+    }
   }
 </style>
 {% endblock %} {% block content %}
@@ -245,7 +263,7 @@
         <div id="medicine-container"></div>
 
         <div class="row mt-3">
-          <div class="col-md-5">
+          <div class="col-md-5 mb-3">
             <label class="form-label">Medicine Name</label>
             <input
               type="text"
@@ -254,7 +272,7 @@
               placeholder="e.g., Amoxicillin"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 mb-3">
             <label class="form-label">Dosage</label>
             <input
               type="text"
@@ -263,7 +281,7 @@
               placeholder="e.g., 500mg"
             />
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 mb-3">
             <label class="form-label">Frequency</label>
             <input
               type="text"
